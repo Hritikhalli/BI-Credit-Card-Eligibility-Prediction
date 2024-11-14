@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="static/style1.css">
+    <link rel="icon" type="image/x-icon" href="static/logo_tr.png">
+    <title>Dataset Prediction Model</title>
+</head>
+<body>
+    <div class="container_main">
+        <div class="sub_container" id="holder">
+            <table>
+                <tr>
+                    
+                    <td><center><h1 class='main_heading'>Credit Card Eligibility Prediction Model</h1></center></td>       
+                </tr>
+            </table>
+            <hr style="height:3px;border-width:0;color:gray;background-color:gray">
+            <div class="form-group">
+                <a href="{{ url_for('dashboard') }}" class="btn btn-primary" style="width: 100%; margin-top: 10px;">Go to Dashboard</a>
+            </div>
+            <table class="t1">
+                <form class="form-horizontal" action="{{ url_for('predict') }}" method="post">
+                    <div class="form-group">
+                        <div class="col-sm-10">
+                            <thead>
+                                <tr><th colspan="2"><b><h4>Submission Form</h4></b></th></tr>
+                            </thead>
+                            <tfoot>
+                                <tr><th colspan="2"><center><b><h4>{{ prediction_text }}</h4></b></center></th></tr>
+                            </tfoot>
+
+                            <!-- Existing Fields -->
+                            <tr><td><label for="Total_income">Total Income:</label></td>
+                            <td>          
+                                <span><input class="form-control" type="text" name="Total_income" placeholder="Enter total income" required="required" /></span>
+                            </td></tr>
+
+                            <tr><td><label for="Years_employed">Years Employed:</label></td>
+                            <td>          
+                                <span><input class="form-control" type="text" name="Years_employed" placeholder="Enter years of employment" required="required" /></span>
+                            </td></tr>
+
+                            <!-- Additional Fields -->
+
+                            <tr><td><label for="Own_car">Own Car:</label></td>
+                            <td>
+                                <span><input class="form-control" type="text" name="Own_car" placeholder="1 for Yes, 0 for No" required="required" /></span>
+                            </td></tr>
+
+                            <tr><td><label for="Own_property">Own Property:</label></td>
+                            <td>
+                                <span><input class="form-control" type="text" name="Own_property" placeholder="1 for Yes, 0 for No" required="required" /></span>
+                            </td></tr>
+
+                            <tr><td><label for="Work_phone">Work Phone:</label></td>
+                            <td>
+                                <span><input class="form-control" type="text" name="Work_phone" placeholder="1 for Yes, 0 for No" required="required" /></span>
+                            </td></tr>
+
+                            <tr><td><label for="Unemployed">Unemployed:</label></td>
+                            <td>
+                                <span><input class="form-control" type="text" name="Unemployed" placeholder="1 for Yes, 0 for No" required="required" /></span>
+                            </td></tr>
+
+                            <tr><td><label for="Num_children">Number of Children:</label></td>
+                            <td>
+                                <span><input class="form-control" type="text" name="Num_children" placeholder="Enter number of children" required="required" /></span>
+                            </td></tr>
+
+                            <tr><td><label for="Num_family">Number of Family Members:</label></td>
+                            <td>
+                                <span><input class="form-control" type="text" name="Num_family" placeholder="Enter number of family members" required="required" /></span>
+                            </td></tr>
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <tr><td colspan="2"><button type="submit" class="btnsub">PREDICT</button></td></tr>
+                        </div>
+                    </div>
+                </form>
+                <h2 class="result"></h2>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

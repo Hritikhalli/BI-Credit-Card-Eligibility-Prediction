@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dataset Analysis Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Dataset Analysis Dashboard</h1>
+        <form id="chartForm">
+            <label for="visualizationType">Select Visualization Type:</label>
+            <select id="visualizationType" name="visualizationType">
+                <option value="gender_distribution">Gender Distribution</option>
+                <option value="income_distribution">Income Distribution</option>
+                <option value="employment_status">Employment Status Distribution</option>
+                <option value="age_distribution">Age Distribution</option>
+            </select>
+
+            <label for="graphType">Select Graph Type:</label>
+            <select id="graphType" name="graphType">
+                <option value="bar">Bar Chart</option>
+                <option value="pie">Pie Chart</option>
+            </select>
+
+            <button type="submit">Generate Chart</button>
+        </form>
+
+        <div class="chart-container">
+            <h2>Generated Chart</h2>
+            <img id="chartImage" src="" alt="Generated chart will appear here">
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
